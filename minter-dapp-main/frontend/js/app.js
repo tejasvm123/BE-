@@ -37,7 +37,7 @@ window.addEventListener("DOMContentLoaded", async () => {
   });
   splide.mount();
 
-  //updateConnectStatus();
+  updateConnectStatus();
   if (MetaMaskOnboarding.isMetaMaskInstalled()) {
     window.ethereum.on("accountsChanged", (newAccounts) => {
       accounts = newAccounts;
@@ -72,7 +72,7 @@ const updateConnectStatus = async () => {
     // SHOW SPINNER
     spinner.classList.remove('hidden');
     window.contract = new web3.eth.Contract(abi, contractAddress);
-    //loadInfo();
+    loadInfo();
   } else {
     onboardButton.innerText = "Connect MetaMask!";
     // HIDE SPINNER
@@ -155,7 +155,7 @@ async function checkChain() {
 }
 
 async function loadInfo() {
-  // window.info = await window.contract.methods.getInfo().call();
+   window.info = await window.contract.methods.getInfo().call();
   const publicMintActive = await contract.methods.mintingActive().call();
   const presaleMintActive = await contract.methods.presaleActive().call();
   const mainHeading = document.getElementById("mainHeading");
