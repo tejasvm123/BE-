@@ -202,7 +202,7 @@ async function loadInfo() {
     }
     setTotalPrice();
   } else {
-    startTime = window.info.runtimeConfig.presaleMintStart;
+    //startTime = window.info.runtimeConfig.presaleMintStart;
     mainHeading.innerText = h1_presale_coming_soon;
     subHeading.innerText = h2_presale_coming_soon;
     mainText.innerText = p_presale_coming_soon;
